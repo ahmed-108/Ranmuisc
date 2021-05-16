@@ -1,0 +1,290 @@
+* {
+            outline: none;
+        }
+        .d-inline-block {
+            width: 180;
+            position: static;
+        }
+
+        .container {
+            padding-right: 0;
+            padding-left: 0;
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        .form-group {
+            position: relative;
+            left: 275px;
+            width: 80%;
+            padding: 20px;
+            background-color: rgb(0, 0, 0, 0.2);
+            border-radius: 40px;
+            bottom: 20px;
+        }
+
+        label {
+            color: white;
+        }
+
+        audio {
+            display: block;
+            position: relative;
+            left: 32%;
+            width: 778px;
+            z-index: 1;
+        }
+
+        audio:focus {
+            outline: none;
+        }
+
+        button {
+            position: relative;
+            outline: none;
+            left: 53.2%;
+            top: 147px;
+            width: 32;
+            height: 33px;
+            border-radius: 50%;
+            font-size: 20px;
+        }
+
+        #frm {
+            position: fixed;
+            left: 80%;
+            width: 40%;
+            top: 321;
+        }
+
+        .category {
+            text-align-last: center;
+            display: block;
+            width: 297;
+            border: 1px solid #e9cf23;
+            border-radius: 14px;
+            z-index: 2;
+        }
+
+        .submit {
+            margin: 23px;
+            width: 213;
+            height: 33px;
+            border-radius: 20px;
+            font-size: 19;
+            position: fixed;
+            right: 51;
+            border: aqua;
+            background-color: #fce0a2;
+        }
+
+        .reload {
+            position: fixed;
+            left: 78%;
+            bottom: 32.7pc;
+            width: 120px;
+            border: 1px solid #e9cf23;
+            border-radius: 21px;
+            height: 35px;
+            font-size: 20px;
+            z-index: 1;
+        }
+
+        .reload:hover {
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        #artistname {
+            position: relative;
+            left: 84.4%;
+            font-size: 26px;
+            font-weight: 900;
+            color: #b0a43d;
+            bottom: 20;
+            text-align: right;
+        }
+
+        #songname {
+            position: absolute;
+            left: 23%;
+            bottom: 565;
+            font-size: 26px;
+            font-weight: 900;
+            color: #b0a43d;
+            text-align: right;
+        }
+
+        #urlimg {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 590;
+            left: 41pc;
+            transition: all 0.6s ease-in-out;
+        }
+
+        #urlimg:hover {
+            bottom: 595;
+            transform: rotate(360deg);
+        }
+
+        #lyrics {
+            color: white;
+            background-color: rgb(0, 0, 0, 0.3);
+            position: relative;
+            left: 365;
+            width: 48.6pc;
+            word-spacing: 10.6px;
+            top: -41;
+            border-radius: 25px 24px 25px 25px;
+            padding: 39px 20px 0px;
+        }
+
+        #lyrics1 {
+            display: none;
+        }
+
+        p {
+            z-index: 200;
+        }
+
+        #ll1 {
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+        }
+
+        .imgmore {
+            width: 35;
+            position: inherit;
+            left: 21pc;
+            top: 9;
+            cursor: pointer;
+        }
+
+        nav {
+            margin: 35px 0;
+            background-color: transparent;
+            width: 12.5pc;
+            color: white;
+            float: right;
+            left: 81.5pc;
+            position: absolute;
+            bottom: 37.1pc;
+            z-index: 3;
+        }
+
+        #picuser {
+            width: 50px;
+            z-index: 3;
+        }
+
+        nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            position: relative;
+            z-index: 3;
+        }
+
+        nav ul li {
+            display: inline-block;
+            background-color: transparent;
+            z-index: 3;
+        }
+
+        nav a {
+            display: block;
+            padding: 0 10px;
+            color: #FFF;
+            font-size: 20px;
+            line-height: 60px;
+            text-decoration: none;
+            z-index: 3;
+            
+        }
+
+        nav a:hover {
+            background-color: #333;
+            width: 12.9pc;
+            text-decoration: none;
+            color: white;
+            z-index: 3;
+        }
+
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 60px;
+            z-index: 3;
+        }
+
+        nav ul li:hover>ul {
+            display: inherit;
+            z-index: 3;
+        }
+
+        nav ul ul li {
+            width: 208px;
+            float: none;
+            display: list-item;
+            position: relative;
+            z-index: 3;
+        }
+
+        nav ul ul ul li {
+            position: relative;
+            top: -60px;
+            left: 200px;
+            z-index: 3;
+        }
+
+        nav ul ul li {
+            border: 1px solid white;
+            z-index: 3;
+        }
+
+        li>a:after {
+            z-index: 3;
+        }
+
+        li>a:only-child:after {
+            content: '';
+            z-index: 3;
+        }
+
+        #next {
+            width: 55;
+            position: relative;
+            right: 1pc;
+            bottom: 1pc;
+            outline: none;
+        }
+
+        #pre {
+            width: 55;
+            transform: rotate(180deg);
+            position: relative;
+            right: 1pc;
+            bottom: 1pc;
+            outline: none;
+        }
+
+        #btnnext {
+            position: fixed;
+            left: 71.9pc;
+            top: 14.8pc;
+            background-image: url(https://img.icons8.com/bubbles/100/000000/fast-forward.png);
+            outline: none;
+        }
+
+        #btnpre {
+            position: fixed;
+            top: 15pc;
+            left: 20.3pc;
+            background-image: url(https://img.icons8.com/bubbles/100/000000/fast-forward.png);
+            outline: none;
+        }
+        

@@ -1,0 +1,117 @@
+<?php 
+if(!isset($_SESSION['old_value'])||$_SESSION['old_value']>=30){
+    $_SESSION['old_value'] = 0;}
+    if(!isset($_POST['pre'])){$random1 = $_SESSION['old_value'] + 1;
+        $_SESSION['old_value'] = $random1;}else{
+        $random1=$_SESSION['old_value']-1;$_SESSION['old_value']=$random1;}
+    echo $random1;
+if($categoryDB=="romantic"||isset($random1)){ 
+    $queree="SELECT * FROM romantic WHERE id='$random1'";
+    $result1=mysqli_query($con,$queree);
+    $data=mysqli_fetch_array($result1);
+    $id=$data[0];
+    $artistname.=$data[1];
+    $songname.=$data[2];
+    $url=$data[3];
+    $lyrics=$data[4];
+    $urlimg=$data[5];
+?>
+<html>
+  <head>
+    <title>RanMusic</title>
+    <meta charset="utf-8">
+    <meta name="RanMusic" content="Join us and Enjoy The Music">
+   <link rel="stylesheet" type="text/css" href="bootstrap.css">
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <style>
+       body{
+           background-image: url(back.jpg.jpg);
+           background-size: cover;
+           background-repeat: no-repeat;
+       }
+       .d-inline-block{
+           width: 180;
+       }
+       .container{
+           padding-right: 0;
+           padding-left: 0;
+           margin-right: 0;
+           margin-left: 0;
+       }
+       .form-group{
+           position: relative;
+           left: 275px;
+           width: 80%;
+           padding: 20px;
+           background-color: rgb(0,0,0,0.2);
+           border-radius: 40px;
+           bottom: 20px;
+       }
+       label{color: white;}
+       .form-control:focus{box-shadow: 0 0 0 0.2rem rgb(231 208 38 / 40%);}
+       #form{text-decoration: none;color: #e2cb25;}
+    #exampleInputPassword1{-webkit-text-security: disc;}
+    label{color: white;}
+       audio{display: block; position: relative; left: 32%;width: 778px;z-index: 1;}
+       audio:focus{outline: none;}
+       button{position: relative;outline: none; left: 53.2%; top: 147px; width: 136px; height: 33px; border-radius: 14px;font-size: 20px;background-color: antiquewhite; }
+       #frm{position: fixed; left: 78%; width: 40%; top: 212;}
+       .category {text-align-last: center;  display: block;width: 297; border: 1px solid #e9cf23; border-radius: 14px;z-index: 2;}
+       .submit{margin: 23px;width: 213;height: 33px;border-radius: 20px; font-size: 19; position: fixed; right: 51;background-color: antiquewhite;}
+    .reload{position: fixed; left: 78%; bottom: 32.7pc; width: 120px;border: 1px solid #e9cf23; border-radius:21px;height:35px;font-size:20px;z-index: 1;} 
+    .reload:hover{cursor: pointer;z-index: 1;}
+    #artistname{position: relative; left:84.4%;font-size: 26px;font-weight: 900;color: #b0a43d;bottom: 20;text-align: right;}
+    #songname{position: absolute;left:23%;bottom: 565;font-size: 26px;font-weight: 900;color: #b0a43d;text-align: right;}
+    #urlimg{width: 150px;height: 150px;border-radius: 50%;position: absolute;bottom: 575;left: 41pc;transition: all 0.6s ease-in-out;}
+    #urlimg:hover{bottom: 590px;transform: rotate(360deg);}
+    #lyrics{color: white;background-color: rgb(0,0,0,0.3);position: relative;left: 365;width: 48.6pc;word-spacing: 10.6px;top: -41; border-radius: 25px 24px 25px 25px; padding: 39px 20px 0px;}
+    #lyrics1{display: none;}
+    p{z-index: 200;}
+    #ll1{cursor: pointer;padding: 0;margin: 0;}
+    .imgmore{width: 35;position: inherit;left: 21pc;top:9;cursor: pointer;}
+   </style>
+  <head>  
+  <body>
+      
+      <!--logo-->
+    <div class="container" >
+        <!--logo-->
+        <a class="navbar-brand" href="home.html">
+          <img src="1.png"class="d-inline-block align-top" alt="Ranmusic" loading="lazy">
+        </a>
+</div>
+<div>
+
+    <span id="artistname"><?php echo $artistname;?></span>
+    <span id="songname"><?php echo $songname;?></span>
+    <span> <?php echo "<audio id='audio' src='$url' controls autoplay controlslist='nodownload'></audio>";?></span>
+    <div id="lyrics"><p id="ll1" onclick="myFunction();">lyrics:</p> <p id="lyrics1"><?php echo $lyrics;?></p>
+    <img class="imgmore" onclick="myFunction();" src="https://img.icons8.com/officel/30/000000/more.png" id="more"/>
+</div>
+    <div><?php echo "<img  id='urlimg' src='$urlimg' alt='img'/>";?></div>
+    <script>
+        var vid = document.getElementById("audio");
+        vid.onended = function() {
+        location.reload();
+        
+        };  
+
+</script>
+<script>
+function myFunction() {
+var x = document.getElementById("lyrics1");
+if (x.style.display === "none") {
+x.style.display = "block";
+} else {
+x.style.display = "none";
+
+}
+}
+
+
+/*document.addEventListener('contextmenu', function(e) { 
+e.preventDefault(); 
+}); */
+</script>
+</html>
